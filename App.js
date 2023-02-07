@@ -1,11 +1,15 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import Login from './src/screens/Practice/Login'
-
+import { NavigationContainer } from '@react-navigation/native'
+import AppStack from './src/screens/Practice/Navigatiors/AppStack'
+import AuthStack from './src/screens/Practice/Navigatiors/AuthStack'
 
 const App = () => {
+  const isLoggedIn = true
   return (
-   <Login />
+    <NavigationContainer>
+      { isLoggedIn ? <AppStack /> : <AuthStack />}
+    </NavigationContainer>
+
   )
 }
 
